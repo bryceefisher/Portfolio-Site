@@ -1,13 +1,594 @@
 body {
+  background-color: #06172c;
+  counter-reset: item 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Source Code Pro", monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  width: 100%;
+  height: 100px;
+  font-family: "Open Sans", sans-serif;
+}
+
+li {
+  display: inline;
+  padding: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#navlist {
+  display: block;
+  float: right;
+  padding: 20px;
+}
+
+#resume {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(161, 192, 218);
+  background-color: transparent;
+  border: 2px solid rgb(22, 149, 116);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#smallName {
+  font-size: 1.5vw;
+  font-weight: 200;
+  color: rgb(22, 149, 116);
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-top: 20%;
+  margin-left: 15%;
+  line-height: 0.5;
+  font-family: "Scope One", serif;
+}
+
+#name {
+  font-size: 3vw;
+  font-weight: 700;
+  color: #b6b7d4;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 15%;
+  line-height: 0.3;
+  font-family: "Open Sans", sans-serif;
+}
+
+#title {
+  font-size: 3vw;
+  font-weight: 700;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 15%;
+  line-height: 1.25;
+  font-family: "Open Sans", sans-serif;
+}
+
+#aboutMe {
+  font-size: 1vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 15%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 45%;
+}
+
+#shape {
+  margin: 10px;
+}
+
+.content {
+  grid-area: content;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 25%;
+  grid-area: content;
+}
+
+#stuff {
+  margin-top: 35%;
+  grid-area: stuff;
+}
+
+#stuffH1 {
+  font-size: 6vw;
+  font-weight: 700;
+  color: #b6b7d4;
+  text-decoration: none;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 0.3;
+  font-family: "Open Sans", sans-serif;
+}
+
+#stuffH2 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 45%;
+  margin-top: 5%;
+}
+
+#work {
+  margin-top: 35%;
+  grid-area: work;
+}
+
+#workH1 {
+  font-size: 6vw;
+  font-weight: 700;
+  color: #b6b7d4;
+  text-decoration: none;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 0.3;
+  font-family: "Open Sans", sans-serif;
+}
+
+#workH2 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 45%;
+  margin-top: 5%;
+}
+
+#contact {
+  margin-top: 35%;
+  grid-area: work;
+}
+
+#contactH1 {
+  font-size: 6vw;
+  font-weight: 700;
+  color: #b6b7d4;
+  text-decoration: none;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 0.3;
+  font-family: "Open Sans", sans-serif;
+}
+
+#contactH2 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 45%;
+  margin-top: 5%;
+}
+
+#footerDiv {
+  grid-area: footer;
+}
+
+footer {
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 42%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 50%;
+  margin-top: 5%;
+}
+
+rect {
+  fill: transparent;
+  stroke: rgb(22, 149, 116);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+ol li a::before {
+  counter-increment: 1;
+  content: counter(item) ". ";
+  counter-increment: item;
+  margin-right: 5px;
+  color: rgb(22, 149, 116);
+  font-size: 0.75rem;
+  text-align: right;
+  font-family: "Quicksand", sans-serif;
+}
+
+#resume:hover {
+  background-color: rgb(22, 149, 116);
+  color: rgb(161, 192, 218);
+}
+
+#resume::before {
+  content: none;
+}
+
+.nav {
+  color: rgb(161, 192, 218);
+  font-family: "Quicksand", sans-serif;
+  grid-area: nav;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: top 0.5s;
+}
+
+tspan {
+  stroke: rgb(161, 192, 218);
+  fill: rgb(161, 192, 218);
+  font-size: 1.5rem;
+}
+
+#sidebarLeft {
+  grid-area: sidebarLeft;
+  text-align: end;
+  position: fixed;
+  height: 100%;
+  color: rgb(161, 192, 218);
+  writing-mode: vertical-rl;
+  bottom: 200px;
+  left: 10px;
+  margin: 1%;
+}
+
+#sidebarHR {
+  position: fixed;
+  writing-mode: vertical-lr;
+}
+
+#emailVertLine {
+  border-left: 1px solid rgb(161, 192, 218);
+  height: 170px;
+  position: fixed;
+  bottom: 0;
+  left: 48px;
+}
+
+#sidebarRight {
+  grid-area: sidebarRight;
+  text-align: end;
+  position: fixed;
+  height: 100%;
+  color: rgb(161, 192, 218);
+  writing-mode: vertical-rl;
+  bottom: 200px;
+  left: 93%;
+}
+
+#linksVertLine {
+  border-left: 1px solid rgb(161, 192, 218);
+  height: 170px;
+  position: fixed;
+  bottom: 0;
+  left: 94%;
+}
+
+.logos {
+  filter: invert(45%) sepia(35%) saturate(297%) hue-rotate(173deg)
+    brightness(93%) contrast(83%);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav nav nav"
+    "content content content content content"
+    "sidebarLeft content content content sidebarLeft"
+    "sidebarLeft content content content sidebarLeft"
+    "sidebarLeft stuff stuff stuff sidebarLeft"
+    "sidebarLeft work work work sidebarLeft"
+    "sidebarLeft footer footer footer sidebarLeft";
+}
+
+@media screen and (max-width: 600px) {
+  #sidebarLeft {
+    display: none;
+  }
+
+  #sidebarRight {
+    display: none;
+  }
+
+  #smallName {
+    font-size: 3vw;
+  }
+
+  #name {
+    font-size: 5vw;
+  }
+
+  #title {
+    font-size: 5vw;
+  }
+
+  #aboutMe {
+    font-size: 2vw;
+    width: 75%;
+  }
+
+  .content {
+    margin-top: 25%;
+  }
+
+  #navlist {
+    display: none;
+  }
+
+  .App {
+    text-align: center;
+    grid-area: app;
+  }
+
+  .App-header {
+    background-color: #06172c;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(22, 149, 116);
+    margin: 1%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .HamburgerMenu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }
+  #root {
+    display: fixed;
+  }
+
+  #logoHome {
+    display: flex;
+    float: right;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "app nav nav nav nav"
+      "content content content content content";
+  }
+  .pane {
+    margin: 1%;
+    background-color: rgba(6, 23, 44, 0.97);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+    z-index: 1;
+    transition: transform 0.1s ease-out;
+    border-radius: 10px;
+  }
+
+  .pane.open {
+    transform: translateX(25%);
+  }
+
+  .pane-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .pane .close-menu .hamburger-react.is-active div {
+    margin: 10px;
+  }
+
+  .close-menu {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .pane-content a {
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #navlistPane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) and (min-width: 601px) {
+  #sidebarLeft {
+    display: none;
+  }
+
+  #sidebarRight {
+    display: none;
+  }
+
+  #smallName {
+    font-size: 3vw;
+  }
+
+  #name {
+    font-size: 5vw;
+  }
+
+  #title {
+    font-size: 5vw;
+  }
+
+  #aboutMe {
+    font-size: 2vw;
+    width: 75%;
+  }
+
+  .content {
+    margin-top: 10%;
+  }
+
+  #navlist {
+    display: none;
+  }
+
+  #navlistPane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+  }
+
+  .App {
+    text-align: center;
+    grid-area: app;
+  }
+
+  .App-header {
+    background-color: #06172c;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(22, 149, 116);
+    margin: 1%;
+  }
+
+  .HamburgerMenu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }
+
+  #root {
+    display: fixed;
+  }
+
+  #logoHome {
+    display: flex;
+    float: right;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "app nav nav nav nav"
+      "content content content content content";
+  }
+
+  .pane {
+    margin: 1%;
+    background-color: rgba(6, 23, 44, 0.97);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+    z-index: 1;
+    transition: transform 0.1s ease-out;
+    border-radius: 10px;
+  }
+
+  .pane.open {
+    transform: translateX(25%);
+  }
+
+  .pane-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .pane .close-menu .hamburger-react.is-active div {
+    margin: 10px;
+  }
+
+  .close-menu {
+    display: flex;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .pane-content a {
+    margin: 5px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
 }
