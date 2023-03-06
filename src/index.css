@@ -83,7 +83,7 @@ a {
   font-family: "Open Sans", sans-serif;
 }
 
-#aboutMe {
+#jobDesc {
   font-size: 1vw;
   font-weight: 400;
   color: #71728d;
@@ -106,11 +106,45 @@ a {
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 25%;
-  grid-area: content;
+  margin-bottom: 35%;
+}
+
+#aboutMe {
+  margin-top: 35%;
+  margin-bottom: 50%;
+  grid-area: about;
+}
+
+#aboutMeH1 {
+  font-size: 6vw;
+  font-weight: 700;
+  color: #b6b7d4;
+  text-decoration: none;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 0.3;
+  font-family: "Open Sans", sans-serif;
+}
+
+#aboutMeH2 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #71728d;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 18%;
+  line-height: 1.25;
+  font-family: "Scope One", serif;
+  width: 45%;
+  margin-top: 5%;
 }
 
 #stuff {
   margin-top: 35%;
+  margin-bottom: 50%;
   grid-area: stuff;
 }
 
@@ -143,6 +177,7 @@ a {
 
 #work {
   margin-top: 35%;
+  margin-bottom: 50%;
   grid-area: work;
 }
 
@@ -175,7 +210,7 @@ a {
 
 #contact {
   margin-top: 35%;
-  grid-area: work;
+  grid-area: contact;
 }
 
 #contactH1 {
@@ -203,10 +238,6 @@ a {
   font-family: "Scope One", serif;
   width: 45%;
   margin-top: 5%;
-}
-
-#footerDiv {
-  grid-area: footer;
 }
 
 footer {
@@ -323,12 +354,16 @@ tspan {
   display: grid;
   grid-template-areas:
     "nav nav nav nav nav"
-    "content content content content content"
-    "sidebarLeft content content content sidebarLeft"
-    "sidebarLeft content content content sidebarLeft"
-    "sidebarLeft stuff stuff stuff sidebarLeft"
-    "sidebarLeft work work work sidebarLeft"
-    "sidebarLeft footer footer footer sidebarLeft";
+    "sidebarLeft content content content sidebarRight"
+    "sidebarLeft content content content sidebarRight"
+    "sidebarLeft about about about sidebarRight"
+    "sidebarLeft about about about sidebarRight"
+    "sidebarLeft stuff stuff stuff sidebarRight"
+    "sidebarLeft stuff stuff stuff sidebarRight"
+    "sidebarLeft work work work sidebarRight"
+    "sidebarLeft work work work sidebarRight"
+    "sidebarLeft contact contact contact sidebarRight"
+    "sidebarLeft contact contact contact sidebarRight";
 }
 
 @media screen and (max-width: 600px) {
@@ -352,13 +387,67 @@ tspan {
     font-size: 5vw;
   }
 
-  #aboutMe {
+  #jobDesc {
     font-size: 2vw;
     width: 75%;
   }
 
   .content {
     margin-top: 25%;
+    grid-area: content;
+  }
+
+  #about {
+    grid-area: about;
+  }
+
+  #aboutMeH1 {
+    font-size: 10vw;
+  }
+
+  #aboutMeH2 {
+    font-size: 3vw;
+    width: 65%;
+  }
+
+  #stuff {
+    grid-area: stuff;
+  }
+
+  #stuffH1 {
+    font-size: 10vw;
+  }
+
+  #stuffH2 {
+    font-size: 3vw;
+    width: 65%;
+  }
+
+  #work {
+    grid-area: work;
+  }
+
+  #workH1 {
+    font-size: 10vw;
+  }
+
+  #workH2 {
+    font-size: 3vw;
+    width: 65%;
+  }
+
+  #contact {
+    grid-area: contact;
+    margin-bottom: 35%;
+  }
+
+  #contactH1 {
+    font-size: 10vw;
+  }
+
+  #contactH2 {
+    font-size: 3vw;
+    width: 65%;
   }
 
   #navlist {
@@ -368,6 +457,7 @@ tspan {
   .App {
     text-align: center;
     grid-area: app;
+    margin-left: 25%;
   }
 
   .App-header {
@@ -399,11 +489,31 @@ tspan {
     float: right;
   }
 
+  footer {
+    font-size: 3vw;
+    font-weight: 400;
+    color: #71728d;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-left: 37%;
+    line-height: 1.25;
+    font-family: "Scope One", serif;
+    width: 50%;
+    margin-top: 50%;
+  }
+
   .grid-container {
+    align-items: center;
     display: grid;
     grid-template-areas:
-      "app nav nav nav nav"
-      "content content content content content";
+      "app app nav nav nav"
+      "content content content content content"
+      "about about about about about"
+      "stuff stuff stuff stuff stuff"
+      "work work work work work"
+      "contact contact contact contact contact";
   }
   .pane {
     margin: 1%;
@@ -483,7 +593,7 @@ tspan {
     font-size: 5vw;
   }
 
-  #aboutMe {
+  #jobDesc {
     font-size: 2vw;
     width: 75%;
   }
@@ -540,8 +650,9 @@ tspan {
   .grid-container {
     display: grid;
     grid-template-areas:
-      "app nav nav nav nav"
-      "content content content content content";
+      "app app nav nav nav nav"
+      "content content content content content content"
+      "aboutMe aboutMe aboutMe aboutMe aboutMe aboutMe";
   }
 
   .pane {

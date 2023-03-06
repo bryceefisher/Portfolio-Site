@@ -12,14 +12,15 @@ ReactDOM.render(<App />, document.getElementById("root"));
   footer.innerHTML = `© ${year} - Bryce Fisher`;
 })();
 
-(function smoothScrollHome() {
-  const homeSection = document.querySelector("#name");
+(function smoothScrollAboutMe() {
+  const aboutSection = document.querySelector("#aboutMe");
 
   document
-    .querySelector(".navHome")
+    .querySelector("#navAbout")
     .addEventListener("click", function (event) {
       event.preventDefault(); // prevents the default behavior of the link
-      homeSection.scrollIntoView({
+      event.stopPropagation();
+      aboutSection.scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "center",
@@ -34,6 +35,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
     .querySelector("#navStuff")
     .addEventListener("click", function (event) {
       event.preventDefault(); // prevents the default behavior of the link
+      event.stopPropagation();
       stuffSection.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -49,6 +51,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
     .querySelector("#navWork")
     .addEventListener("click", function (event) {
       event.preventDefault(); // prevents the default behavior of the link
+      event.stopPropagation();
       workSection.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -64,6 +67,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
     .querySelector("#navContact")
     .addEventListener("click", function (event) {
       event.preventDefault(); // prevents the default behavior of the link
+      event.stopPropagation();
       contactSection.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -71,3 +75,95 @@ ReactDOM.render(<App />, document.getElementById("root"));
       });
     });
 })();
+
+window.addEventListener("click", function () {
+  const pane = document.querySelector(".pane");
+  if (pane) {
+    (function smoothScrollAboutMePane() {
+      const aboutSection = document.querySelector("#aboutMe");
+
+      document
+        .querySelector("#aboutli")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // prevents the default behavior of the link
+          aboutSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+          pane.style.display = "none"; // hide the pane after scrolling
+        });
+
+      // add event listener for closing the pane when clicking on link within the pane
+      document.querySelector("#aboutli").addEventListener("click", function () {
+        pane.style.display = "none";
+      });
+    })();
+
+    // same for the other sections
+    (function smoothScrollStuffPane() {
+      const stuffSection = document.querySelector("#stuff");
+
+      document
+        .querySelector("#stuffli")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // prevents the default behavior of the link
+          stuffSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+          pane.style.display = "none"; // hide the pane after scrolling
+        });
+
+      // add event listener for closing the pane when clicking on link within the pane
+      document.querySelector("#stuffli").addEventListener("click", function () {
+        pane.style.display = "none";
+      });
+    })();
+
+    (function smoothScrollWorkPane() {
+      const workSection = document.querySelector("#work");
+
+      document
+        .querySelector("#workli")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // prevents the default behavior of the link
+          workSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+          pane.style.display = "none"; // hide the pane after scrolling
+        });
+
+      // add event listener for closing the pane when clicking on link within the pane
+      document.querySelector("#workli").addEventListener("click", function () {
+        pane.style.display = "none";
+      });
+    })();
+
+    (function smoothScrollContactPane() {
+      const contactSection = document.querySelector("#contact");
+
+      document
+        .querySelector("#contactli")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // prevents the default behavior of the link
+          contactSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+          pane.style.display = "none"; // hide the pane after scrolling
+        });
+
+      // add event listener for closing the pane when clicking on link within the pane
+      document
+        .querySelector("#contactli")
+        .addEventListener("click", function () {
+          pane.style.display = "none";
+        });
+    })();
+  }
+});
