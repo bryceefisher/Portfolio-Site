@@ -1,33 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HamburgerMenu from "react-hamburger-menu";
 import "./index.css";
 
 function App() {
   const [isPaneOpen, setPaneOpen] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 
   const handleClick = () => {
     setPaneOpen(!isPaneOpen);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos) {
-      setPaneOpen(true);
-    } else {
-      setPaneOpen(false);
-    }
-
-    setPrevScrollPos(currentScrollPos);
+  const handleLinkClick = () => {
+    setPaneOpen(false);
   };
 
   return (
@@ -36,7 +19,7 @@ function App() {
         <HamburgerMenu
           isOpen={isPaneOpen}
           menuClicked={handleClick}
-          width={35}
+          width={50}
           height={35}
           strokeWidth={1}
           rotate={0}
@@ -52,8 +35,8 @@ function App() {
             <HamburgerMenu
               isOpen={isPaneOpen}
               menuClicked={handleClick}
-              width={35}
-              height={35}
+              width={50}
+              height={50}
               strokeWidth={1}
               rotate={0}
               color="white"
@@ -64,34 +47,53 @@ function App() {
           </div>
           <div className="pane-content">
             <ol id="navlistPane" type="1">
-              <li>
-                <a className="nav" href="index.html">
+              <li id="aboutli" onClick={handleLinkClick}>
+                <a
+                  onClick={handleLinkClick}
+                  className="nav"
+                  id="navAboutMePane"
+                  href="#aboutMe"
+                >
                   About
                 </a>
               </li>
-              <li>
-                <div>
-                  <a className="nav" href="#stuff">
-                    Stuff
-                  </a>
-                </div>
+              <li id="stuffli" onClick={handleLinkClick}>
+                <a
+                  onClick={handleLinkClick}
+                  className="nav"
+                  id="navStuffPane"
+                  href="#stuff"
+                >
+                  Stuff
+                </a>
               </li>
-              <li>
-                <a className="nav" href="#work">
+              <li id="workli" onClick={handleLinkClick}>
+                <a
+                  onClick={handleLinkClick}
+                  className="nav"
+                  id="navWorkPane"
+                  href="#work"
+                >
                   Work
                 </a>
               </li>
-              <li>
-                <a className="nav" href="#contact">
+              <li id="contactli" onClick={handleLinkClick}>
+                <a
+                  onClick={handleLinkClick}
+                  className="nav"
+                  id="navContactPane"
+                  href="#contact"
+                >
                   Contact
                 </a>
               </li>
-              <li>
+              <li onClick={handleLinkClick}>
                 <a
+                  onClick={handleLinkClick}
                   className="nav"
                   target=" _blank"
                   id="resume"
-                  href="resume.pdf"
+                  href="assets/resume.pdf"
                 >
                   Resume
                 </a>
