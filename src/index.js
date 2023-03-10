@@ -167,3 +167,35 @@ window.addEventListener("click", function () {
     })();
   }
 });
+
+(function togglenNav() {
+  const nav = document.querySelector("nav");
+  let prevScrollPosition = window.pageYOffset;
+  let scrollCounter = 0;
+  const scrollDelay = 15; // Number of scroll events to wait before hiding/showing
+
+  window.onscroll = function () {
+    const currentScrollPosition = window.pageYOffset;
+
+    if (
+      prevScrollPosition > currentScrollPosition ||
+      currentScrollPosition < 10
+    ) {
+      // Scrolling up
+      scrollCounter++;
+      if (scrollCounter >= scrollDelay) {
+        nav.classList.remove("hidden");
+        scrollCounter = 0;
+      }
+    } else {
+      // Scrolling down
+      scrollCounter++;
+      if (scrollCounter >= scrollDelay) {
+        nav.classList.add("hidden");
+        scrollCounter = 0;
+      }
+    }
+
+    prevScrollPosition = currentScrollPosition;
+  };
+})();
